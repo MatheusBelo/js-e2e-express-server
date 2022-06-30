@@ -48,3 +48,11 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)/npm'
     artifactName: npm
   displayName: 'Publish npm artifact'
+
+#Task de Publicar Resultados do Teste
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/test-results.xml'
+  displayName: 'Publicação do Teste'  
