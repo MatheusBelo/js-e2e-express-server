@@ -23,7 +23,7 @@ steps:
   
 - script: npm install -g @angular/cli  
 - script: yarn install  
-- script: tsc --target ES6 --strict true --project tsconfigs/production.json
+- script: mocha test --reporter mocha-junit-reporter
   
   #Parte das Tasks
 - task: CopyFiles@2
