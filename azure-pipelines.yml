@@ -23,6 +23,7 @@ steps:
   
 - script: npm install -g @angular/cli  
 - script: yarn install  
+- script: npm run compile
   
   #Parte das Tasks
 - task: CopyFiles@2
