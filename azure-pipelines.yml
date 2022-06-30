@@ -23,7 +23,7 @@ steps:
   
 - script: npm install -g @angular/cli  
 - script: yarn install  
-- script: mocha test --reporter mocha-junit-reporter
+- script: jasmine test --reporter jasmine-reporters
   
   #Parte das Tasks
 - task: CopyFiles@2
