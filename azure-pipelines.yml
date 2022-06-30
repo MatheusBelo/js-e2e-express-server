@@ -22,6 +22,7 @@ steps:
   displayName: 'npm install and build'
   
 - script: npm install -g @angular/cli  
+- script: yarn install  
   
   #Parte das Tasks
 - task: CopyFiles@2
