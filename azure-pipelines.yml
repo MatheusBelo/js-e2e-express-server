@@ -15,11 +15,15 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
+#Parte dos Scripts
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
   
+- script: npm install -g @angular/cli  
+  
+  #Parte das Tasks
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
@@ -39,3 +43,5 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)/npm'
     artifactName: npm
   displayName: 'Publish npm artifact'
+  
+  - script: npm install -g @angular/cli
