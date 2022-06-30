@@ -43,5 +43,3 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)/npm'
     artifactName: npm
   displayName: 'Publish npm artifact'
-  
-  - script: npm install -g @angular/cli
