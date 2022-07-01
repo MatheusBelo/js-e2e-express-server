@@ -29,6 +29,9 @@ steps:
   displayName: 'executar o teste'
 - script: npm run build
   displayName: 'executar o build'
+- script: |
+    npm install webpack webpack-cli --save-dev
+    npx webpack --config webpack.config.js
 
   #Parte das Tasks
 - task: CopyFiles@2
