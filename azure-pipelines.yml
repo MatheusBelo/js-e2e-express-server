@@ -26,6 +26,10 @@ steps:
     npm install webpack
   displayName: 'instalar o webpack'
   
+  
+- script: npm install --save-dev webpack-cli
+  displayName: 'instalar o webpack-cli'
+  
 #Script para instalar o leitor de JSON
 - script: npm install json-loader
   displayName: 'instalar o leitor de json'
