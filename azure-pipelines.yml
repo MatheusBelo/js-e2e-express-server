@@ -23,7 +23,7 @@ steps:
 
 #Script para instalar o webpack
 - script: |
-    npm install webpack
+    npm install webpack --save
   displayName: 'instalar o webpack'
   
   
@@ -31,7 +31,7 @@ steps:
   displayName: 'instalar o webpack-cli'
   
 #Script para instalar o leitor de JSON
-- script: npm install json-loader
+- script: npm install json-loader --save
   displayName: 'instalar o leitor de json'
   
  #Script para instalar o bootstrap
@@ -39,15 +39,12 @@ steps:
   displayName: 'instalar o bootstrap'
   
   
-- script: npm install -g @angular/cli  
+- script: npm install -g @angular/cli --save
   displayName: 'instalar o angular'
 - script: yarn install  
   displayName: 'instalar o yarn'
 - script: npm test
   displayName: 'executar o teste'
-- script: |
-    npm install webpack webpack-cli --save-dev
-    npx webpack --config webpack.config.js
 
   #Parte das Tasks
 - task: CopyFiles@2
