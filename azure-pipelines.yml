@@ -30,14 +30,17 @@ steps:
 - script: npm install json-loader
   displayName: 'instalar o leitor de json'
   
+ #Script para instalar o bootstrap
+- script: npm install bootstrap@4.1.3 jquery@3.3.1 popper.js@1.14.3 --save
+  displayName: 'instalar o bootstrap'
+  
+  
 - script: npm install -g @angular/cli  
   displayName: 'instalar o angular'
 - script: yarn install  
   displayName: 'instalar o yarn'
 - script: npm test
   displayName: 'executar o teste'
-- script: npm run build
-  displayName: 'executar o build'
 - script: |
     npm install webpack webpack-cli --save-dev
     npx webpack --config webpack.config.js
