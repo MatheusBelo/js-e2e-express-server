@@ -27,6 +27,10 @@ steps:
   displayName: 'instalar o yarn'
 - script: npm test
   displayName: 'executar o teste'
+- script: webpack
+  displayName: 'executar o webpack'
+- script: npm run build
+  displayName: 'executar o build'
 
   #Parte das Tasks
 - task: CopyFiles@2
