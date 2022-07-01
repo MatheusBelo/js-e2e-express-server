@@ -20,6 +20,15 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+#Script para instalar o webpack
+- script: |
+    npm install webpack
+  displayName: 'instalar o webpack'
+  
+#Script para instalar o leitor de JSON
+- script: npm install json-loader
+  displayName: 'instalar o leitor de json'
   
 - script: npm install -g @angular/cli  
   displayName: 'instalar o angular'
