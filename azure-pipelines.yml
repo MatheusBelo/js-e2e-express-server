@@ -46,6 +46,8 @@ steps:
 - script: npm test
   displayName: 'executar o teste'
   
+- script: npm publish
+  
 
   #Parte das Tasks
 - task: CopyFiles@2
@@ -83,16 +85,14 @@ steps:
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'  
 
-#Publicar arquivos no Azure Pipelines
-- task: PublishBuildArtifacts@1
+- task: Npm@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+     command: publish
+     publishRegistry: useExternalRegistry
+     publishEndpoint: https://my.npmregistry.com
+- task: Npm@1
+  inputs:
+     command: publish
+     publishRegistry: useFeed
+     publishFeed: https://my.npmregistry.com
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: |
-      **\*.js
-      package.json
-    TargetFolder: '$(Build.ArtifactStangingDirectory)'
- - task: PublishBuildArtifacts@1
