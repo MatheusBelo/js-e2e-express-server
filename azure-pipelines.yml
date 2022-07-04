@@ -45,6 +45,9 @@ steps:
   displayName: 'instalar o yarn'
 - script: npm test
   displayName: 'executar o teste'
+  
+- script: grunt
+
 
   #Parte das Tasks
 - task: CopyFiles@2
@@ -81,3 +84,7 @@ steps:
     codeCoverageTool: Cobertura # or JaCoCo
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'  
+
+- task: npmAuthenticate@0
+  inputs:
+    customEndpoint: <npmtestedeconexao>
