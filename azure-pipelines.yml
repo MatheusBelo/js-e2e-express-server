@@ -46,8 +46,6 @@ steps:
 - script: npm test
   displayName: 'executar o teste'
   
-- script: npm publish
-  
 
   #Parte das Tasks
 - task: CopyFiles@2
